@@ -1,7 +1,9 @@
 import "./users.scss";
-import DataTable from "../../components/AreaChartBox/DataTable/DataTable";
+import DataTable from "../../components/DataTable/DataTable";
 import { GridColDef } from "@mui/x-data-grid";
 import { userRows } from "../../data";
+import Add from "../../components/PopupBox/Add";
+import { useState } from "react";
 
 const columns: GridColDef[] = [
   { field: "id", headerName: "ID", width: 90 },
@@ -52,16 +54,18 @@ const columns: GridColDef[] = [
 ];
 
 function Users() {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="users">
       <div className="info">
         <h1>Users</h1>
-        <button>Add New User</button>
+        <button onClick={() => setIsOpen(true)}>Add New User</button>
       </div>
 
       <div className="gridcontainer">
         <DataTable slug="users" columns={columns} rows={userRows} />
       </div>
+      {isOpen && <Add columns={columns} slug="User" setOpen={setIsOpen} />}
     </div>
   );
 }
