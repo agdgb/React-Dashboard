@@ -50,9 +50,10 @@ const columns: GridColDef[] = [
     headerName: "In Stock",
     width: 150,
     type: "boolean",
-  },
+  }
+]
 
-function Products() {
+const  Products = () => {
   const [open, setOpen] = useState(false);
 
   return (
@@ -61,7 +62,7 @@ function Products() {
         <h2>Users</h2>
         <button onClick={() => setOpen(true)}>Add New Product</button>
       </div>
-      <DataTable slug="Product" columns={columns} rows={products} />
+      <DataTable slug="Products" columns={columns} rows={products} />
       {open && <Add columns={columns} slug="Product" setOpen={setOpen} />}
     </div>
   );

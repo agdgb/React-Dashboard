@@ -1,0 +1,95 @@
+@import "../../styles/variable.scss";
+.single {
+  display: flex;
+
+  .view {
+    flex: 1;
+    .info {
+      .topinfo {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        img {
+          height: 100px;
+          width: 100px;
+          border-radius: 20px;
+        }
+
+        h1 {
+          font-weight: 500;
+        }
+      }
+      .details {
+        font-size: 18px;
+
+        .item {
+          margin: 30px 0px;
+
+          .itemtitle {
+            font-weight: 700;
+            margin-right: 10px;
+            text-transform: capitalize;
+          }
+
+          .itemvalue {
+          }
+        }
+      }
+      hr {
+        border: 1px solid $soft-bg;
+        height: 0;
+        width: 90%;
+        margin: 20px;
+      }
+
+      .chart {
+        margin-top: 50px;
+        width: 80%;
+        height: 400px;
+      }
+    }
+  }
+  .activities {
+    flex: 1;
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    ul {
+      li {
+        list-style-type: none;
+        position: relative;
+        width: 1px;
+        background-color: #f45b69;
+        padding-top: 50px;
+        &::after {
+          content: "";
+          position: absolute;
+          left: 50%;
+          bottom: 0;
+          //   top: 0;
+          height: 10px;
+          width: 10px;
+          border-radius: 50%;
+          background-color: #f45b69;
+          transform: translateX(-50%);
+        }
+      }
+    }
+
+    div {
+      min-width: 480px;
+      padding: 15px;
+      background: #f45b6810;
+
+      p {
+        margin-bottom: 5px;
+      }
+
+      time {
+        font-size: 12px;
+      }
+    }
+  }
+}
